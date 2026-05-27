@@ -21,19 +21,24 @@
             </select>
             <label for="bill_amount">Enter bill amount</label>
             <input type="number" id="bill_amount">
-            <label for="tip_percent">Enter tip percent</label>
+            <label for="tip_percent">Select tip percent</label>
+            <span>
+                <button type="button" id="tip_button_1">10%</button>
+                <button type="button" id="tip_button_2">15%</button>
+                <button type="button" id="tip_button_3">20%</button>
+            </span>
             <input type="number" id="tip_percent">
             <label for="number_of_people">Enter number of people</label>
             <input type="number" id="number_of_people">
             <div>
-                <p class="total">Total Tip: 
-                <span class="total" id="result_total_tip">00.00</span>
+                <p class="total">Total Tip:
+                    <span class="total" id="result_total_tip">00.00</span>
                 </p>
-                <p class="total">Total Amount: 
-                <span class="total" id="result_total_amount">00.00</span>
+                <p class="total">Total Amount:
+                    <span class="total" id="result_total_amount">00.00</span>
                 </p>
-                <p class="total">Pay Per Person: 
-                <span class="total" id="result_pay_per_person">00.00</span>
+                <p class="total">Pay Per Person:
+                    <span class="total" id="result_pay_per_person">00.00</span>
                 </p>
             </div>
         </form>
