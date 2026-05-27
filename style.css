@@ -1,0 +1,11 @@
+/* The file for designing my calculator */
+body {
+    background-color: rgb(206, 253, 237);
+}
+
+/* To format Tip Calculator Title */
+h1 {
+    color: rgb(0, 109, 18);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
