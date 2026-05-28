@@ -94,3 +94,16 @@ tip_percent.addEventListener("input", calculate);
 
 number_of_people.addEventListener("input", calculate);
 currency.addEventListener("change", calculate);
+
+// Event listener for reset_button
+document.getElementById("reset_button").addEventListener("click", function () {
+    bill_amount.value = ""; //to reset the input field
+    tip_percent.value = "";
+    number_of_people.value = "";
+    change_tip_percent_button_preset.call(this, ""); //to reset the tip_percentage set buttons
+    change_tip_percent_button_preset.call(this, "");
+    change_tip_percent_button_preset.call(this, "");
+    result_total_tip.textContent = 0.00; //to reset the results
+    result_total_amount.textContent = 0.00;
+    result_pay_per_person.textContent = 0.00;
+});
