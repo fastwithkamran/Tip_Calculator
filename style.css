@@ -25,7 +25,7 @@ h1 {
     border: 2px solid rgb(156, 228, 156);
     border-radius: 20px;
     box-shadow: 4px 4px 4px rgb(0, 78, 0, 0.7);
-    animation: fadein 3s;
+    animation: slideup 3s;
 }
 
 form {
@@ -101,9 +101,9 @@ label {
     }
 }
 
-@keyframes fadein {
+@keyframes slideup {
     from {
-        transform: translateX(-100);
+        transform: translateY(200px);
         opacity: 0;
     }
     to {
