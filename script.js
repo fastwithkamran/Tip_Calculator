@@ -51,11 +51,11 @@ function calculate() {
     const total_tip = get_bill_amount * get_tip_percent;
     const total_amount = get_bill_amount + total_tip;
     //Using Math.ceil for the rounding policy; this ensures the amount get fairly distributed among people; and the shop not receives less amount
-    const pay_per_person = Math.ceil((total_amount / get_number_of_people)*100)/100;
+    const pay_per_person = Math.ceil((total_amount / get_number_of_people) * 100) / 100;
 
-    result_total_tip.textContent = (get_bill_amount <= 0) ? 0 : total_tip.toFixed(2);
-    result_total_amount.textContent = (get_tip_percent < 0) ? 0 : total_amount.toFixed(2);
-    result_pay_per_person.textContent = (get_number_of_people <= 0) ? 0 : pay_per_person.toFixed(2);
+    result_total_tip.textContent = (get_bill_amount <= 0) ? 0 : total_tip.toFixed(2)+get_currency_value;
+    result_total_amount.textContent = (get_tip_percent < 0) ? 0 : total_amount.toFixed(2)+get_currency_value;
+    result_pay_per_person.textContent = (get_number_of_people <= 0) ? 0 : pay_per_person.toFixed(2)+get_currency_value;
 }
 
 //Function to change preset of tip_percent button
@@ -94,16 +94,17 @@ document.getElementById("tip_button_3").addEventListener("click", function () {
 tip_percent.addEventListener("input", calculate);
 
 number_of_people.addEventListener("input", calculate);
-currency.addEventListener("change", calculate);
-
 // Event listener for reset_button
 document.getElementById("reset_button").addEventListener("click", function () {
     bill_amount.value = ""; //to reset the input field
     tip_percent.value = "";
     number_of_people.value = "";
-    change_tip_percent_button_preset.call(this, ""); //to reset the tip_percentage set buttons
-    change_tip_percent_button_preset.call(this, "");
-    change_tip_percent_button_preset.call(this, "");
+    document.getElementById("tip_button_1").style.backgroundColor = ""; //to remove the preset tip_percent buttons
+    document.getElementById("tip_button_2").style.backgroundColor = "";
+    document.getElementById("tip_button_3").style.backgroundColor = "";
+    error_bill_amount.classList.remove("show"); //to remove the errors
+    error_tip_percent.classList.remove("show");
+    error_number_of_people.classList.remove("show");
     result_total_tip.textContent = 0.00; //to reset the results
     result_total_amount.textContent = 0.00;
     result_pay_per_person.textContent = 0.00;
