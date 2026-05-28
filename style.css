@@ -25,6 +25,7 @@ h1 {
     border: 2px solid rgb(156, 228, 156);
     border-radius: 20px;
     box-shadow: 4px 4px 4px rgb(0, 78, 0, 0.7);
+    animation: fadein 3s;
 }
 
 form {
@@ -97,5 +98,16 @@ label {
         font-size: 16px;
         height: auto;
         padding: 10px;
+    }
+}
+
+@keyframes fadein {
+    from {
+        transform: translateX(-100);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
