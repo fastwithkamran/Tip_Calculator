@@ -52,9 +52,9 @@ function calculate() {
     const total_amount = get_bill_amount + total_tip;
     const pay_per_person = total_amount / get_number_of_people;
 
-    result_total_tip.textContent = total_tip + get_currency_value;
-    result_total_amount.textContent = total_amount;
-    result_pay_per_person.textContent = pay_per_person;
+    result_total_tip.textContent = (get_bill_amount <= 0) ? 0 : total_tip + get_currency_value;
+    result_total_amount.textContent = (get_tip_percent < 0) ? 0 : total_amount;
+    result_pay_per_person.textContent = (get_number_of_people <= 0) ? 0 : pay_per_person;
 }
 
 //Function to change preset of tip_percent button
