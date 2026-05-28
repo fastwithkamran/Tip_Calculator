@@ -7,6 +7,7 @@ body {
     align-items: center;
     margin: 0%;
     padding: 0%;
+    min-height: 100vh;
 }
 
 /* To format Tip Calculator Title */
@@ -20,11 +21,10 @@ h1 {
 .container {
     max-width: 500px;
     width: 50vw;
-    margin-top: 3vw;
-    height: 75vh;
+    min-height: 75vh;
     border: 2px solid rgb(156, 228, 156);
     border-radius: 20px;
-    box-shadow: 4px 4px 4px rgb(0, 78, 0, 34);
+    box-shadow: 4px 4px 4px rgb(0, 78, 0, 0.7);
 }
 
 form {
@@ -64,10 +64,38 @@ label {
     color: white;
     background-color: red;
     text-align: center;
-    font-size: 3.5vh;
+    font-size: 1.6rem;
     display: block;
     margin: 0 auto;
     border: 2px solid red;
     border-radius: 10px;
-    box-shadow: 4px 4px 4px rgb(148, 96, 0, 10);
+    box-shadow: 4px 4px 4px rgba(240, 0, 0, 0.2);
+}
+
+/* tablets and small screens */
+@media (max-width: 768px) {
+    .container {
+        width: 90vw;
+        height: auto;
+        margin-top: 5vw;
+    }
+
+    form {
+        padding: 5vw;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    label,
+    .total {
+        font-size: 16px;
+    }
+
+    #reset_button {
+        font-size: 16px;
+        height: auto;
+        padding: 10px;
+    }
 }
