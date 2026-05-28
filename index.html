@@ -21,6 +21,7 @@
             </select>
             <label for="bill_amount">Enter bill amount</label>
             <input type="number" id="bill_amount">
+            <span class="error" id="error_bill_amount">Error! Enter a valid Bill Amount must be greater than 0</span>
             <label for="tip_percent">Select tip percent</label>
             <span>
                 <button type="button" id="tip_button_1">10%</button>
@@ -28,8 +29,10 @@
                 <button type="button" id="tip_button_3">20%</button>
             </span>
             <input type="number" id="tip_percent">
+            <span class="error" id="error_tip_percent">Error! Tip % should be equal or greater than 0</span>
             <label for="number_of_people">Enter number of people</label>
             <input type="number" id="number_of_people">
+            <span class="error" id="error_number_of_people">Error! Enter atleast 1 people</span>
             <div>
                 <p class="total">Total Tip:
                     <span class="total" id="result_total_tip">00.00</span>
