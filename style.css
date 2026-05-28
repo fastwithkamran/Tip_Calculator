@@ -11,26 +11,40 @@ h1 {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.container{
+.container {
     max-width: 500px;
     border: 2px solid rgb(156, 228, 156);
     border-radius: 20px;
     margin-top: 10vw;
 }
 
-form{
+form {
     margin-top: 10px;
     padding: 3vw;
     display: grid;
     gap: 15px;
 }
 
-label{
-    color:darkgreen;
+label {
+    color: darkgreen;
     font-size: 20px;
 }
 
-.total{
+.total {
     font-size: 20px;
     color: darkgreen;
+}
+
+.error {
+    display: none;
+}
+
+.error.show {
+    display: block;
+    color: yellow;
+    background-color: red;
+    display: block;
+    text-align: center;
+    border: 2px solid red;
+    border-radius: 10px;
 }
