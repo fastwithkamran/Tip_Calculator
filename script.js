@@ -50,11 +50,12 @@ function calculate() {
     //calculation steps
     const total_tip = get_bill_amount * get_tip_percent;
     const total_amount = get_bill_amount + total_tip;
-    const pay_per_person = total_amount / get_number_of_people;
+    //Using Math.ceil for the rounding policy; this ensures the amount get fairly distributed among people; and the shop not receives less amount
+    const pay_per_person = Math.ceil((total_amount / get_number_of_people)*100)/100;
 
-    result_total_tip.textContent = (get_bill_amount <= 0) ? 0 : total_tip + get_currency_value;
-    result_total_amount.textContent = (get_tip_percent < 0) ? 0 : total_amount;
-    result_pay_per_person.textContent = (get_number_of_people <= 0) ? 0 : pay_per_person;
+    result_total_tip.textContent = (get_bill_amount <= 0) ? 0 : total_tip.toFixed(2);
+    result_total_amount.textContent = (get_tip_percent < 0) ? 0 : total_amount.toFixed(2);
+    result_pay_per_person.textContent = (get_number_of_people <= 0) ? 0 : pay_per_person.toFixed(2);
 }
 
 //Function to change preset of tip_percent button
